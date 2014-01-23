@@ -9,7 +9,7 @@ module Rack::Scaffold::Adapters
 
     class << self
       def ===(model)
-        ::ActiveRecord::Base === model
+        ::ActiveRecord::Base === model.send(:new)
       end
 
       def resources(model, options = {})
